@@ -1,0 +1,37 @@
+ <html>
+  {% load static %}
+     <head>
+
+        <title>
+            DevSearch
+        </title>
+
+    </head>
+
+
+
+  <body>
+    <h1>This is main template</h1>
+    {% include 'navbar.html' %}
+
+    {% if messages %} 
+    <ul class="messages">
+       {% for message in messages %}
+       <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+         {% endfor %}
+    </ul>
+    {% endif %}
+
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "styles/main.css" %}'>
+    {% block content %}
+    {% endblock content%}
+    
+   <p>FOOTER</p>
+ </body>
+
+
+
+    
+
+
+</html>
